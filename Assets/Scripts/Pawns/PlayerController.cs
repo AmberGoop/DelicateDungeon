@@ -18,5 +18,11 @@ public class PlayerController : MonoBehaviour
         Vector3 direction = new Vector3(Input.GetAxis("Horizontal"),0,Input.GetAxis("Vertical"));
         playerRB.AddForce(direction.normalized*moveSpeed*Time.deltaTime);
     }
+    private void OnTriggerEnter(Collider other)
+    {
+        print(other.tag);
+        if(other.tag=="Player") {
 
+        }
+    }
 }

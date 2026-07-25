@@ -477,8 +477,12 @@ MonoBehaviour:
   currentState: 0
   timer: 100
   facingLeft: 1
-  moveSpeed: 5000
+  baseMoveSpeed: 3000
+  fastMoveSpeed: 4000
+  visRange: 5
+  loseRange: 10
   moveDirection: {x: 0, y: 0, z: 0}
+  toPlayer: {x: 0, y: 0, z: 0}
 --- !u!65 &814349394
 BoxCollider:
   m_ObjectHideFlags: 0
