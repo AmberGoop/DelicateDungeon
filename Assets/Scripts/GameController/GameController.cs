@@ -1,15 +1,11 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Collections.Generic;
 
 public class GameController : MonoBehaviour
 {
-    public int enemySlimeCount = 300;
-    public int enemyGolemCount = 100;
-    public int enemyWraithCount = 100;
-    public int enemyUndineCount = 100;
-    public int enemyMimicCount = 100;
-    public int enemyHellbatCount = 100;
-    public int enemyDragonCount = 100;
+    public Dictionary<string, int> populations = new Dictionary<string,int>();
+    public int playerHP = 15;
 
 
     /*
@@ -24,6 +20,13 @@ public class GameController : MonoBehaviour
     void Start()
     {
         SceneManager.LoadScene("Scenes/UI/AreaSelect", LoadSceneMode.Additive);
+        populations.Add("slime",300);
+        populations.Add("talus",100);
+        populations.Add("wraith",100);
+        populations.Add("undine",100);
+        populations.Add("mimic",100);
+        populations.Add("hellbat",100);
+        populations.Add("dragon",100);
         
     }
 

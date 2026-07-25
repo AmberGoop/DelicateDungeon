@@ -11,9 +11,6 @@ public class EnemyController : MonoBehaviour
     public State currentState = State.Idle;
     public int timer = 60;
     public bool facingLeft = true;
-    private BoxCollider hitbox;
-    private Rigidbody enemyRB;
-    private GameObject player;
 
     public int baseMoveSpeed = 3000;
     public int fastMoveSpeed = 4500;
@@ -22,17 +19,28 @@ public class EnemyController : MonoBehaviour
     public int loseRange = 20;
     public Vector3 moveDirection;
     public Vector3 toPlayer;
+
+    public string species;
+    public int invuln = 0;
+    public int health = 3;
+
+    private BoxCollider hitbox;
+    private Rigidbody enemyRB;
+    private GameObject player;
+    private GameController gc;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         enemyRB = GetComponent<Rigidbody>();
         player = GameObject.FindGameObjectWithTag("Player");
         hitbox = transform.GetChild(0).gameObject.GetComponent<BoxCollider>();
+        gc = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(invuln>0){invuln--;}
         toPlayer=player.transform.position-transform.position;
         toPlayer.y=0;
         switch(currentState){
@@ -90,6 +98,23 @@ public class EnemyController : MonoBehaviour
         }
         if(currentState==State.Aggro&&toPlayer.magnitude>=loseRange) {
             currentState=State.Idle;
+        }
+
+
+
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.tag=="PlayerHitbox"&&invuln==0) {
+            health--;
+            if(health==0){
+                gc.populations[species]-=1;
+                print(gc.populations[species]);
+                Destroy(gameObject);
+
+            }
+            invuln=60;
+
         }
     }
 }

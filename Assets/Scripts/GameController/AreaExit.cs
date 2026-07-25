@@ -13,7 +13,6 @@ public class AreaExit : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        print(other.tag);
         if(other.tag=="Player") {
             gc.timeOfDay+=1;
             if(gc.timeOfDay==3) {

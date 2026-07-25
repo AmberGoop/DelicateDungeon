@@ -5,11 +5,13 @@ TagManager:
   serializedVersion: 3
   tags:
   - Enemy
+  - PlayerHitbox
+  - EnemyHitbox
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Hitbox
   - Water
   - UI
   - 
