@@ -16,7 +16,7 @@ public class MainMenuController : MonoBehaviour
     }
 
     public void startGame() {
-        SceneManager.LoadScene("Intermission");
+        SceneManager.LoadScene("Scenes/Controller");
     }
     public void quitGame() {
         Application.Quit();

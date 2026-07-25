@@ -9,7 +9,22 @@ EditorBuildSettings:
     path: Assets/Scenes/Title.unity
     guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 1
+    path: Assets/Scenes/Controller.unity
+    guid: a33ffae4d0e03522da5472844744e19c
+  - enabled: 1
     path: Assets/Scenes/UI/Intermission.unity
     guid: dad4bcb17aef188018d0b0a6c15ceb09
+  - enabled: 1
+    path: Assets/Scenes/UI/AreaSelect.unity
+    guid: 059601474bbe541cf8f58dee99d46efe
+  - enabled: 1
+    path: Assets/Scenes/Areas/Corridors.unity
+    guid: e6188fd8b9fdd5110853fa43cca2dbe0
+  - enabled: 1
+    path: Assets/Scenes/Areas/Cistern.unity
+    guid: 6a2dfb37645167dacabeeb0b7cd396a7
+  - enabled: 1
+    path: Assets/Scenes/Areas/Caverns.unity
+    guid: 78c3416a276421af8b67ff91846c657e
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}

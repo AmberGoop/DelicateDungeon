@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
@@ -20,6 +21,7 @@ public class GameController : MonoBehaviour
 
     void Start()
     {
+        SceneManager.LoadScene("Scenes/UI/AreaSelect", LoadSceneMode.Additive);
         
     }
 
