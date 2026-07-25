@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -16,9 +17,6 @@ public class PlayerController : MonoBehaviour
     {
         Vector3 direction = new Vector3(Input.GetAxis("Horizontal"),0,Input.GetAxis("Vertical"));
         playerRB.AddForce(direction.normalized*moveSpeed*Time.deltaTime);
-        /*if(direction.magnitude< 0.01f) {
-            playerRB.linearVelocity = Vector3.zero;
-        }*/
-
     }
+
 }

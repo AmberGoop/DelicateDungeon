@@ -19,6 +19,8 @@ public class GameController : MonoBehaviour
     */
     public float relationMultiplier = 1.2f;
 
+    public int timeOfDay = 0;
+
     void Start()
     {
         SceneManager.LoadScene("Scenes/UI/AreaSelect", LoadSceneMode.Additive);
