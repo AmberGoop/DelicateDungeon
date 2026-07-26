@@ -22,6 +22,8 @@ public class EnemyTakeDamage : MonoBehaviour
             p.health--;
             if(p.health==0){
                 gc.populations[p.species]-=1;
+                double gToAdd = p.maxHealth*1.5;
+                gc.playerG+=(int) gToAdd;
                 Destroy(transform.parent.gameObject);
 
             }

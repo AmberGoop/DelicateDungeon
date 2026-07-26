@@ -22,7 +22,8 @@ public class EnemyController : MonoBehaviour
 
     public string species;
     public int invuln = 0;
-    public int health = 3;
+    public int maxHealth = 3;
+    public int health;
 
     private BoxCollider hitbox;
     private Rigidbody enemyRB;
@@ -30,6 +31,7 @@ public class EnemyController : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        health = maxHealth;
         enemyRB = GetComponent<Rigidbody>();
         player = GameObject.FindGameObjectWithTag("Player");
         hitbox = transform.GetChild(0).gameObject.GetComponent<BoxCollider>();
@@ -75,8 +77,10 @@ public class EnemyController : MonoBehaviour
                 if(timer==105){
                     hitbox.enabled=true;
                 }
-                if(timer<50){
+                if(timer==100){
                     hitbox.enabled=false;
+                }
+                if(timer<50){
                     if(toPlayer.magnitude>atkRange){
                         currentState=State.Aggro;
                     }

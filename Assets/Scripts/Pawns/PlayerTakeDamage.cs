@@ -11,6 +11,7 @@ public class PlayerTakeDamage : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
+        print(other.tag);
         if(other.tag=="EnemyHitbox") {
             gc.playerHP--;
         }

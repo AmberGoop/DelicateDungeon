@@ -6,6 +6,7 @@ public class GameController : MonoBehaviour
 {
     public Dictionary<string, int> populations = new Dictionary<string,int>();
     public int playerHP = 15;
+    public int playerG = 0;
 
 
     /*
