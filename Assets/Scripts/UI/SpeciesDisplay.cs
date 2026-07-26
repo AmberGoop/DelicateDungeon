@@ -18,7 +18,7 @@ public class SpeciesDisplay : MonoBehaviour
 
     // Update is called once per frame
     public void updateLabels() {
-        transform.Find("SpeciesCount").GetComponent<TMPro.TextMeshProUGUI>().text = gc.populations[species] + "/" + gc.maxPopulations[species];
+        transform.Find("SpeciesCount").GetComponent<TMPro.TextMeshProUGUI>().text = gc.populations[species] + "/" + gc.healthyPopulation;
         transform.Find("SpeciesDiff").GetComponent<TMPro.TextMeshProUGUI>().text =  ((gc.populations[species]-gc.oldPopulations[species])<0 ?  "": "+" )+(gc.populations[species]-gc.oldPopulations[species]);
     }
 
