@@ -7,17 +7,20 @@ public class GameController : MonoBehaviour
     public Dictionary<string, int> populations = new Dictionary<string,int>();
     public Dictionary<string, int> maxPopulations = new Dictionary<string,int>();
     public Dictionary<string, int> oldPopulations = new Dictionary<string,int>();
+    public Dictionary<string, string> relationships = new Dictionary<string,string>{
+    {"dragon","undine"},
+    {"dragon","hellbat"},
+    {"hellbat","slime"},
+    {"mimic","wraith"},
+    {"talus","wraith"},
+    {"undine","hellbat"}
+    };
 
     public int playerHP = 15;
     public int playerG = 0;
 
 
-    /*
-       if one species predates on another species, then at the end of a day,
-       it will decrease its prey species count based on its own count.
-       this variable controls how strong this interaction is.
-    */
-    public float relationMultiplier = 1.2f;
+
 
     public int timeOfDay = 0;
 
@@ -32,23 +35,16 @@ public class GameController : MonoBehaviour
         maxPopulations.Add("hellbat",100);
         maxPopulations.Add("dragon",100);
 
-        populations.Add("slime",300);
-        populations.Add("talus",100);
-        populations.Add("wraith",100);
-        populations.Add("undine",100);
-        populations.Add("mimic",100);
-        populations.Add("hellbat",100);
-        populations.Add("dragon",100);
+        foreach(var (species,population) in maxPopulations) {
+            populations.Add(species,population);
+            oldPopulations.Add(species,population);
+        }
 
-        oldPopulations.Add("slime",300);
-        oldPopulations.Add("talus",100);
-        oldPopulations.Add("wraith",100);
-        oldPopulations.Add("undine",100);
-        oldPopulations.Add("mimic",100);
-        oldPopulations.Add("hellbat",100);
-        oldPopulations.Add("dragon",100);
+
         
     }
+
+
 
 
 
