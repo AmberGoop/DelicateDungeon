@@ -27,14 +27,12 @@ public class EnemyController : MonoBehaviour
     private BoxCollider hitbox;
     private Rigidbody enemyRB;
     private GameObject player;
-    private GameController gc;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         enemyRB = GetComponent<Rigidbody>();
         player = GameObject.FindGameObjectWithTag("Player");
         hitbox = transform.GetChild(0).gameObject.GetComponent<BoxCollider>();
-        gc = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
     }
 
     // Update is called once per frame
@@ -66,7 +64,7 @@ public class EnemyController : MonoBehaviour
                 if(toPlayer.magnitude<atkRange) {
                     if(timer<1) {
                         currentState = State.Attack;
-                        timer=90;
+                        timer=120;
                     }
                 } else {
                     enemyRB.AddForce(moveDirection.normalized*fastMoveSpeed*Time.deltaTime);
@@ -74,17 +72,17 @@ public class EnemyController : MonoBehaviour
                 break;
             case State.Attack:
                 timer-=1;
-                if(timer==80){
+                if(timer==105){
                     hitbox.enabled=true;
                 }
-                if(timer<60){
+                if(timer<50){
                     hitbox.enabled=false;
                     if(toPlayer.magnitude>atkRange){
                         currentState=State.Aggro;
                     }
                 }
                 if(timer<1){
-                    timer=90;
+                    timer=120;
                 }
                 break;
 
@@ -103,18 +101,5 @@ public class EnemyController : MonoBehaviour
 
 
     }
-    private void OnTriggerEnter(Collider other)
-    {
-        if(other.tag=="PlayerHitbox"&&invuln==0) {
-            health--;
-            if(health==0){
-                gc.populations[species]-=1;
-                print(gc.populations[species]);
-                Destroy(gameObject);
 
-            }
-            invuln=60;
-
-        }
-    }
 }

@@ -4,7 +4,6 @@ using UnityEngine.SceneManagement;
 public class PlayerController : MonoBehaviour
 {
     public Rigidbody playerRB;
-    private GameController gc;
     private BoxCollider hitbox;
     public float moveSpeed;
 
@@ -13,7 +12,6 @@ public class PlayerController : MonoBehaviour
     {
         playerRB = GetComponent<Rigidbody>();
         hitbox = transform.GetChild(1).gameObject.GetComponent<BoxCollider>();
-        gc = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
     }
 
     // Update is called once per frame
@@ -22,19 +20,12 @@ public class PlayerController : MonoBehaviour
         Vector3 direction = new Vector3(Input.GetAxis("Horizontal"),0,Input.GetAxis("Vertical"));
         if(hitbox.enabled==false){playerRB.AddForce(direction.normalized*moveSpeed*Time.deltaTime);}
         if(Input.GetMouseButtonDown(0)&&hitbox.enabled==false) {
-            print("attack!");
             hitbox.enabled=true;
             Invoke(nameof(disableHitbox), 0.5f);
         }
 
     }
-    private void OnTriggerEnter(Collider other)
-    {
-        if(other.tag=="EnemyHitbox") {
-            print("Chomp!");
-            gc.playerHP--;
-        }
-    }
+
     private void disableHitbox() {
         hitbox.enabled=false;
     }
