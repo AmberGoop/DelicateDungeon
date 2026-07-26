@@ -9,6 +9,7 @@ public class AreaExit : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start() {
      gc = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
+     SceneManager.SetActiveScene(SceneManager.GetSceneByName("Scenes/Areas/"+currentArea));
     }
 
     private void OnTriggerEnter(Collider other)

@@ -14,6 +14,9 @@ public class PlayerTakeDamage : MonoBehaviour
         print(other.tag);
         if(other.tag=="EnemyHitbox") {
             gc.playerHP--;
+            if(gc.playerHP==0) {
+                gc.die();
+            }
         }
     }
 }

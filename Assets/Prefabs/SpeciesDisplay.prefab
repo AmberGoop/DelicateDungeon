@@ -497,7 +497,7 @@ GameObject:
   - component: {fileID: -3049794456292195890}
   m_Layer: 5
   m_Name: SpeciesDisplay
-  m_TagString: Untagged
+  m_TagString: SpeciesDisplay
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
