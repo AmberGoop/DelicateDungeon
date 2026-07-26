@@ -26,6 +26,7 @@ public class EnemyController : MonoBehaviour
     public int health;
 
     private BoxCollider hitbox;
+    private TMPro.TextMeshProUGUI healthDisplay;
     private Rigidbody enemyRB;
     private GameObject player;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -35,11 +36,13 @@ public class EnemyController : MonoBehaviour
         enemyRB = GetComponent<Rigidbody>();
         player = GameObject.FindGameObjectWithTag("Player");
         hitbox = transform.GetChild(0).gameObject.GetComponent<BoxCollider>();
+        healthDisplay = transform.Find("HealthDisplay").Find("HealthNum").GetComponent<TMPro.TextMeshProUGUI>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        healthDisplay.text = ""+health;
         if(invuln>0){invuln--;}
         toPlayer=player.transform.position-transform.position;
         toPlayer.y=0;
