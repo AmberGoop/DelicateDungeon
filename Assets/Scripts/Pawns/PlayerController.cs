@@ -6,6 +6,10 @@ public class PlayerController : MonoBehaviour
     public Rigidbody playerRB;
     private BoxCollider hitbox;
     public float moveSpeed;
+    public Sprite[] idle;
+    public Sprite[] walk;
+    public Sprite[] atk;
+    public int animationTimer;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
