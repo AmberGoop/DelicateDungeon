@@ -13,7 +13,7 @@ public class EnemyController : MonoBehaviour
     private SpriteRenderer sprite;
     private Animator animator;
     public int animationTimer=0;
-    public string currentAnimation= "";
+    private string currentAnimation= "";
     public Sprite spriteIdle1;
     public Sprite spriteIdle2;
     public Sprite spriteWalk1;
