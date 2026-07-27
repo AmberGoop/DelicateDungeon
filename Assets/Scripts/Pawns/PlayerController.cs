@@ -36,8 +36,10 @@ public class PlayerController : MonoBehaviour
         }
         if(direction.x<0&&hitbox.enabled==false) {
             changeAnimation("turnCW");
+            hitbox.center = new Vector3(-0.6f,0,0);
         } else if (direction.x>0&&hitbox.enabled==false){
             changeAnimation("turnCCW");
+            hitbox.center = new Vector3(0.6f,0,0);
         }
         if(direction.magnitude==0&&hitbox.enabled==false) {
             sprite.sprite = idle[(animationTimer/30)%2];
