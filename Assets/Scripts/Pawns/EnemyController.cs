@@ -6,13 +6,16 @@ public class EnemyController : MonoBehaviour
         Idle,
         Roam,
         Aggro,
-        Attack
+        Attack,
+        Dying
     };
     public State currentState = State.Idle;
     public int timer = 60;
     private SpriteRenderer sprite;
+    private Color color;
     private Animator animator;
-    public int animationTimer=0;
+    private int animationTimer=0;
+    private GameObject ps;
     private string currentAnimation= "";
     public Sprite spriteIdle1;
     public Sprite spriteIdle2;
@@ -23,9 +26,9 @@ public class EnemyController : MonoBehaviour
 
     public int baseMoveSpeed = 3000;
     public int fastMoveSpeed = 4500;
-    public int atkRange = 2;
-    public int visRange = 10;
-    public int loseRange = 20;
+    public float atkRange = 2;
+    public float visRange = 10;
+    public float loseRange = 20;
     public Vector3 moveDirection;
     public Vector3 toPlayer;
 
@@ -38,12 +41,14 @@ public class EnemyController : MonoBehaviour
     private TMPro.TextMeshProUGUI healthDisplay;
     private Rigidbody enemyRB;
     private GameObject player;
+    public GameObject poof;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         health = maxHealth;
         enemyRB = GetComponent<Rigidbody>();
         sprite = transform.Find("Sprite").GetComponent<SpriteRenderer>();
+        color = sprite.color;
         animator = transform.Find("Sprite").GetComponent<Animator>();
         player = GameObject.FindGameObjectWithTag("Player");
         hitbox = transform.GetChild(0).gameObject.GetComponent<BoxCollider>();
@@ -54,7 +59,10 @@ public class EnemyController : MonoBehaviour
     void Update()
     {
         animationTimer++;
-
+        color.a = (Mathf.Cos(invuln/5)+3)/4;
+        color.b = (Mathf.Cos(invuln/5)+3)/4;
+        color.g = (Mathf.Cos(invuln/5)+3)/4;
+        sprite.color = color;
         healthDisplay.text = ""+health;
         if(invuln>0){invuln--;}
         toPlayer=player.transform.position-transform.position;
@@ -125,9 +133,19 @@ public class EnemyController : MonoBehaviour
                     timer=120;
                 }
                 break;
+            case State.Dying:
+                sprite.sprite=spriteAtk1;
+                timer--;
+                if(timer==1){
+
+                    Instantiate(poof, gameObject.transform.position,Quaternion.identity);
+                }
+                if(timer==0){
+                    Destroy(gameObject);
+                }
+                break;
 
         }
-
 
 
         if((currentState==State.Idle||currentState==State.Roam)&&toPlayer.magnitude<=visRange) {
@@ -137,10 +155,15 @@ public class EnemyController : MonoBehaviour
         if(currentState==State.Aggro&&toPlayer.magnitude>=loseRange) {
             currentState=State.Idle;
         }
-        if(moveDirection.x>0){
-            changeAnimation("turnCCW");
+        if(health!=0) {
+            if(moveDirection.x>0){
+                changeAnimation("turnCCW");
+            } else {
+                changeAnimation("turnCW");
+            }
         } else {
-            changeAnimation("turnCW");
+            changeAnimation("spin");
+            currentState=State.Dying;
         }
 
 

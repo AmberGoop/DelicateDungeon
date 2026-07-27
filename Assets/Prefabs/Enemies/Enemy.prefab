@@ -100,7 +100,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   currentState: 0
   timer: 100
-  currentAnimation: 
   spriteIdle1: {fileID: -1754876857, guid: e861ea0dae4850061bf0e1ae83c51339, type: 3}
   spriteIdle2: {fileID: 1693765120, guid: e861ea0dae4850061bf0e1ae83c51339, type: 3}
   spriteWalk1: {fileID: -1026467504, guid: e861ea0dae4850061bf0e1ae83c51339, type: 3}
@@ -109,7 +108,7 @@ MonoBehaviour:
   spriteAtk2: {fileID: -1910502162, guid: e861ea0dae4850061bf0e1ae83c51339, type: 3}
   baseMoveSpeed: 3000
   fastMoveSpeed: 4000
-  atkRange: 2
+  atkRange: 1.5
   visRange: 5
   loseRange: 10
   moveDirection: {x: 0, y: 0, z: 0}
@@ -118,6 +117,7 @@ MonoBehaviour:
   invuln: 0
   maxHealth: 3
   health: 3
+  poof: {fileID: 561512638477844211, guid: 6968b8c7d5ef9a859aff42baa919661c, type: 3}
 --- !u!1 &3434484757188004943
 GameObject:
   m_ObjectHideFlags: 0
