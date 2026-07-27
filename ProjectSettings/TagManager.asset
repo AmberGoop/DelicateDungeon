@@ -8,6 +8,7 @@ TagManager:
   - PlayerHitbox
   - EnemyHitbox
   - SpeciesDisplay
+  - HP
   layers:
   - Default
   - TransparentFX
