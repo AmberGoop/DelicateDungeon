@@ -18,11 +18,14 @@ public class GameController : MonoBehaviour
     public int playerMaxHP = 15;
     public int playerHP;
     public int playerG = 0;
+    public int tuitionFee = 1000;
+    public int gameEndState=0;
 
 
     public int healthyPopulation = 10;
     public string selectedArea;
     public int timeOfDay = 0;
+    public int dayCounter= 0;
 
     void Start()
     {
@@ -46,6 +49,25 @@ public class GameController : MonoBehaviour
                     populations[species]++;
                 }
                 }
+        }
+
+    }
+
+    public void checkForGameEndState() {
+        if(playerG<0) {
+            gameEndState=2;
+        }
+        if(playerG>tuitionFee){
+            gameEndState=3;
+        }
+        foreach(string species in speciesTypes) {
+            if(populations[species]<1) {
+                gameEndState=1;
+            }
+        }
+        if(gameEndState!=0) {
+            SceneManager.UnloadSceneAsync("Scenes/UI/Intermission");
+            SceneManager.LoadScene("Scenes/UI/GameEnd",LoadSceneMode.Additive);
         }
     }
 

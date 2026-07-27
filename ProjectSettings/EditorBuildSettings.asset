@@ -26,5 +26,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Areas/Caverns.unity
     guid: 78c3416a276421af8b67ff91846c657e
+  - enabled: 1
+    path: Assets/Scenes/UI/GameEnd.unity
+    guid: 5583ba3abc251440f817a08d1bc6f25e
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}

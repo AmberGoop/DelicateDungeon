@@ -33,6 +33,8 @@ public class IntermissionLogic : MonoBehaviour
 
         gc.playerHP = gc.playerMaxHP;
         gc.timeOfDay = 0;
+        gc.dayCounter++;
+        gc.checkForGameEndState();
     }
 
     public void backToAreaSelect() {
