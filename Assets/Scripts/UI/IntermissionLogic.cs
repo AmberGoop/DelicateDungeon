@@ -12,7 +12,6 @@ public class IntermissionLogic : MonoBehaviour
     {
 
         gc = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
-        gc.checkForGameEndState();
         moneyUI = transform.Find("MoneyUI").gameObject;
 
         string losses = gc.playerG+" G<br>Food & Shelter: -"+foodCost;
@@ -23,6 +22,13 @@ public class IntermissionLogic : MonoBehaviour
         gc.playerG-=foodCost;
         moneyUI.transform.Find("CurrentMoney").GetComponent<TMPro.TextMeshProUGUI>().text = gc.playerG+" G";
         moneyUI.transform.Find("Losses").GetComponent<TMPro.TextMeshProUGUI>().text = losses+" G";
+
+        gc.checkForGameEndState();
+
+
+        gc.playerHP = gc.playerMaxHP;
+        gc.timeOfDay = 0;
+        gc.dayCounter++;
         gc.calculatePopulations();
         GameObject[] gameObjects = GameObject.FindGameObjectsWithTag("SpeciesDisplay");
         displays = new SpeciesDisplay[gameObjects.Length];
@@ -32,10 +38,6 @@ public class IntermissionLogic : MonoBehaviour
         foreach(SpeciesDisplay display in displays) {
             display.updateLabels();
         }
-
-        gc.playerHP = gc.playerMaxHP;
-        gc.timeOfDay = 0;
-        gc.dayCounter++;
     }
 
     public void backToAreaSelect() {
