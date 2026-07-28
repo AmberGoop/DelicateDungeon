@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7751257773531709283}
   - component: {fileID: 4003335825455093552}
   m_Layer: 0
-  m_Name: Enemy
+  m_Name: Slime
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -100,12 +100,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   currentState: 0
   timer: 100
-  spriteIdle1: {fileID: -1754876857, guid: e861ea0dae4850061bf0e1ae83c51339, type: 3}
-  spriteIdle2: {fileID: 1693765120, guid: e861ea0dae4850061bf0e1ae83c51339, type: 3}
-  spriteWalk1: {fileID: -1026467504, guid: e861ea0dae4850061bf0e1ae83c51339, type: 3}
-  spriteWalk2: {fileID: 186624604, guid: e861ea0dae4850061bf0e1ae83c51339, type: 3}
-  spriteAtk1: {fileID: 36561128, guid: e861ea0dae4850061bf0e1ae83c51339, type: 3}
-  spriteAtk2: {fileID: -1910502162, guid: e861ea0dae4850061bf0e1ae83c51339, type: 3}
+  spriteIdle1: {fileID: 1800362780, guid: 910496aa5df61be03a7b90b5a1a1ed4d, type: 3}
+  spriteIdle2: {fileID: -273438608, guid: 910496aa5df61be03a7b90b5a1a1ed4d, type: 3}
+  spriteWalk1: {fileID: 669198980, guid: 910496aa5df61be03a7b90b5a1a1ed4d, type: 3}
+  spriteWalk2: {fileID: 1315200484, guid: 910496aa5df61be03a7b90b5a1a1ed4d, type: 3}
+  spriteAtk1: {fileID: -59222167, guid: 910496aa5df61be03a7b90b5a1a1ed4d, type: 3}
+  spriteAtk2: {fileID: 371641606, guid: 910496aa5df61be03a7b90b5a1a1ed4d, type: 3}
   baseMoveSpeed: 3000
   fastMoveSpeed: 4000
   atkRange: 1.5
@@ -390,7 +390,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -1754876857, guid: e861ea0dae4850061bf0e1ae83c51339, type: 3}
+  m_Sprite: {fileID: 1800362780, guid: 910496aa5df61be03a7b90b5a1a1ed4d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0

@@ -10,7 +10,9 @@ public class IntermissionLogic : MonoBehaviour
     private GameObject moneyUI;
     void Start()
     {
+
         gc = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
+        gc.checkForGameEndState();
         moneyUI = transform.Find("MoneyUI").gameObject;
 
         string losses = gc.playerG+" G<br>Food & Shelter: -"+foodCost;
@@ -34,7 +36,6 @@ public class IntermissionLogic : MonoBehaviour
         gc.playerHP = gc.playerMaxHP;
         gc.timeOfDay = 0;
         gc.dayCounter++;
-        gc.checkForGameEndState();
     }
 
     public void backToAreaSelect() {

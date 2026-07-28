@@ -140,16 +140,16 @@ MonoBehaviour:
   playerRB: {fileID: 0}
   moveSpeed: 5000
   idle:
-  - {fileID: 741720275, guid: 1c62ba994198590dfb6cb4f878ec4d4f, type: 3}
-  - {fileID: 498092662, guid: 1c62ba994198590dfb6cb4f878ec4d4f, type: 3}
+  - {fileID: -567406687, guid: 69f4eccd830e3de0c8876c2e6c0c8af8, type: 3}
+  - {fileID: 348101953, guid: 69f4eccd830e3de0c8876c2e6c0c8af8, type: 3}
   walk:
-  - {fileID: 1878622093, guid: 1c62ba994198590dfb6cb4f878ec4d4f, type: 3}
-  - {fileID: 105918564, guid: 1c62ba994198590dfb6cb4f878ec4d4f, type: 3}
-  - {fileID: -1564347292, guid: 1c62ba994198590dfb6cb4f878ec4d4f, type: 3}
-  - {fileID: 713183566, guid: 1c62ba994198590dfb6cb4f878ec4d4f, type: 3}
+  - {fileID: 2137598465, guid: 69f4eccd830e3de0c8876c2e6c0c8af8, type: 3}
+  - {fileID: 2084892462, guid: 69f4eccd830e3de0c8876c2e6c0c8af8, type: 3}
+  - {fileID: -371298265, guid: 69f4eccd830e3de0c8876c2e6c0c8af8, type: 3}
+  - {fileID: -1524664872, guid: 69f4eccd830e3de0c8876c2e6c0c8af8, type: 3}
   atk:
-  - {fileID: -1596435332, guid: 1c62ba994198590dfb6cb4f878ec4d4f, type: 3}
-  - {fileID: 44632840, guid: 1c62ba994198590dfb6cb4f878ec4d4f, type: 3}
+  - {fileID: -12119660, guid: 69f4eccd830e3de0c8876c2e6c0c8af8, type: 3}
+  - {fileID: -540382178, guid: 69f4eccd830e3de0c8876c2e6c0c8af8, type: 3}
   animationTimer: 0
 --- !u!54 &631598763633974653
 Rigidbody:
@@ -395,8 +395,8 @@ Transform:
   m_GameObject: {fileID: 8752521425134917675}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.44, y: 0.72, z: 1.44}
+  m_LocalPosition: {x: 0, y: 0.372, z: 0}
+  m_LocalScale: {x: 1, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 622912182879627212}
@@ -450,7 +450,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 1878622093, guid: 1c62ba994198590dfb6cb4f878ec4d4f, type: 3}
+  m_Sprite: {fileID: -567406687, guid: 69f4eccd830e3de0c8876c2e6c0c8af8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

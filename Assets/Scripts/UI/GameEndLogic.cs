@@ -33,7 +33,7 @@ public class GameEndLogic : MonoBehaviour
 
 
     }
-    void returnToTitle() {
+    public void returnToTitle() {
         SceneManager.LoadScene("Scenes/Title");
     }
 

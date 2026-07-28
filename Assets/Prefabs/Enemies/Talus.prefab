@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7751257773531709283}
   - component: {fileID: 4003335825455093552}
   m_Layer: 0
-  m_Name: Enemy
+  m_Name: Talus
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -57,7 +57,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 0.5}
+  m_Size: {x: 1.33, y: 1, z: 0.5}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &7751257773531709283
 Rigidbody:
@@ -100,23 +100,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   currentState: 0
   timer: 100
-  spriteIdle1: {fileID: -1754876857, guid: e861ea0dae4850061bf0e1ae83c51339, type: 3}
-  spriteIdle2: {fileID: 1693765120, guid: e861ea0dae4850061bf0e1ae83c51339, type: 3}
-  spriteWalk1: {fileID: -1026467504, guid: e861ea0dae4850061bf0e1ae83c51339, type: 3}
-  spriteWalk2: {fileID: 186624604, guid: e861ea0dae4850061bf0e1ae83c51339, type: 3}
-  spriteAtk1: {fileID: 36561128, guid: e861ea0dae4850061bf0e1ae83c51339, type: 3}
-  spriteAtk2: {fileID: -1910502162, guid: e861ea0dae4850061bf0e1ae83c51339, type: 3}
-  baseMoveSpeed: 3000
-  fastMoveSpeed: 4000
+  spriteIdle1: {fileID: -1562355395, guid: 011e754388fed11b7a0edb7a0c037938, type: 3}
+  spriteIdle2: {fileID: -464719601, guid: 011e754388fed11b7a0edb7a0c037938, type: 3}
+  spriteWalk1: {fileID: 925092358, guid: 011e754388fed11b7a0edb7a0c037938, type: 3}
+  spriteWalk2: {fileID: -1813631459, guid: 011e754388fed11b7a0edb7a0c037938, type: 3}
+  spriteAtk1: {fileID: -1174283773, guid: 011e754388fed11b7a0edb7a0c037938, type: 3}
+  spriteAtk2: {fileID: 2035824638, guid: 011e754388fed11b7a0edb7a0c037938, type: 3}
+  baseMoveSpeed: 2000
+  fastMoveSpeed: 3000
   atkRange: 1.5
   visRange: 5
-  loseRange: 10
+  loseRange: 15
   moveDirection: {x: 0, y: 0, z: 0}
   toPlayer: {x: 0, y: 0, z: 0}
-  species: slime
+  species: talus
   invuln: 0
-  maxHealth: 3
-  health: 3
+  maxHealth: 5
+  health: 5
   poof: {fileID: 561512638477844211, guid: 6968b8c7d5ef9a859aff42baa919661c, type: 3}
 --- !u!1 &3434484757188004943
 GameObject:
@@ -306,7 +306,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.5, y: 1, z: 1.5}
+  m_Size: {x: 1.94, y: 1, z: 1.5}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &5989846181073493165
 GameObject:
@@ -335,9 +335,9 @@ Transform:
   m_GameObject: {fileID: 5989846181073493165}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: 0, y: 0.501, z: 0}
+  m_LocalScale: {x: 0.81, y: 0.81, z: 0.81}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 6798882321798378566}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -390,7 +390,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -1754876857, guid: e861ea0dae4850061bf0e1ae83c51339, type: 3}
+  m_Sprite: {fileID: -1562355395, guid: 011e754388fed11b7a0edb7a0c037938, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
@@ -475,7 +475,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 0.5}
+  m_Size: {x: 1.33, y: 1, z: 0.5}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &8863617358108447220
 MonoBehaviour:
@@ -618,7 +618,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0.969}
+  m_AnchoredPosition: {x: 0, y: 1.473}
   m_SizeDelta: {x: 1, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &3846742007429776786
